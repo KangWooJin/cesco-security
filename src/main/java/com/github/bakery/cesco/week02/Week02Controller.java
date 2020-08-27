@@ -4,6 +4,7 @@ import java.security.Principal;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Week02Controller {
 
-    @GetMapping("/find")
+    @PostMapping("/find")
     public ResponseEntity<String> isOk(Principal principal) {
         if (principal == null || principal.getName() == null) {
             return ResponseEntity.notFound().build();
